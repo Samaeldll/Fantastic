@@ -148,12 +148,12 @@ public:
 
     static bool HandleWorldChatCommand(ChatHandler * handler, const char * args)
     {
-        if (sWorld->getIntConfig(CONFIG_WORLD_CHAT_ENABLED) == 0)
+        /*if (sWorld->getIntConfig(CONFIG_WORLD_CHAT_ENABLED) == 0)
         {
             handler->PSendSysMessage("Мировой чат отключен");
             handler->SetSentErrorMessage(true);
             return false;
-        }
+        } отключено */
 
         if (!handler->GetSession()->GetPlayer()->CanSpeak())
             return false;
