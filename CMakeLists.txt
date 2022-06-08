@@ -32,10 +32,16 @@ set(scripts_STAT_SRCS
     #Arena1x1
     Custom/npc_arena1v1.cpp
     Custom/npc_arena1v1.h
+    #WorldChat
+    Custom/WorldChat/worldchat.cpp
     #Other
+    Custom/world_announer.cpp
+    Custom/Announce_NewPlayer.cpp
+    Custom/gm_hello.cpp
     Custom/custom_item_scripts.cpp
     Custom/Reforging.cpp
     Custom/Custom_PlayerScripts.cpp
+    Custom/buffs.cpp
     Custom/killsystem.cpp
     Custom/change.cpp
     Custom/ArenaFastStart.cpp
