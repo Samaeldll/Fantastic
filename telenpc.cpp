@@ -4,7 +4,7 @@
 using namespace std;
 
 string time_conv_to_str;
-uint64 guid_bosses[5] = {9465074, 9480422, 9475945, 9477284, 9477471};
+uint64 guid_bosses[6] = {9465074, 9480422, 9475945, 9477284, 9477471, 10208869};
 
 class telenpc : public CreatureScript 
 { 
@@ -46,6 +46,7 @@ class telenpc : public CreatureScript
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_03:25|tАрхангел Михаил: " + GetRespTimeBoss(guid_bosses[2]), GOSSIP_SENDER_MAIN, 502); 
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_04:25|tАзог Завоеватель: " + GetRespTimeBoss(guid_bosses[3]), GOSSIP_SENDER_MAIN, 503);
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tАрхител: " + GetRespTimeBoss(guid_bosses[4]), GOSSIP_SENDER_MAIN, 504);
+       player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tГул'Дан: " + GetRespTimeBoss(guid_bosses[5]), GOSSIP_SENDER_MAIN, 506);
        player->ADD_GOSSIP_ITEM( 7, "Обновить", GOSSIP_SENDER_MAIN, 505);
     }
     bool OnGossipHello(Player* player, Creature* creature)
