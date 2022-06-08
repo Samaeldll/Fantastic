@@ -5,7 +5,7 @@ class Announce_NewPlayer : public PlayerScript
 public:
         Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}
  
-        void OnLogin(Player * player)
+        void OnLogin(Player * player, bool) #override
         {
                 std::ostringstream ss;
  
