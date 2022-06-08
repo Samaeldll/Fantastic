@@ -37,7 +37,6 @@ set(scripts_STAT_SRCS
     #Other
     Custom/world_announer.cpp
     Custom/Announce_NewPlayer.cpp
-    Custom/gm_hello.cpp
     Custom/custom_item_scripts.cpp
     Custom/Reforging.cpp
     Custom/Custom_PlayerScripts.cpp
