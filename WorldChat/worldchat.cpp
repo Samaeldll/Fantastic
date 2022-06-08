@@ -139,7 +139,7 @@ public:
     {
         static ChatCommand WorldChatCommandTable[] =
         {
-            {"chat", rbac::RBAC_PERM_COMMAND_CUSTOM_CHAT, true, &HandleWorldChatCommand, "", NULL },
+            {"chat", SEC_PLAYER, true, &HandleWorldChatCommand, "", NULL },
             { NULL, 0									,false, NULL				   , "", NULL }
         };
 
