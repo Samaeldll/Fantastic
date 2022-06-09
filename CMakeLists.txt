@@ -35,6 +35,8 @@ set(scripts_STAT_SRCS
     #WorldChat
     Custom/WorldChat/worldchat.cpp
     #Other
+    Custom/Boss_Announcer.cpp
+    Custom/buff_command.cpp
     Custom/world_announer.cpp
     Custom/Announce_NewPlayer.cpp
     Custom/custom_item_scripts.cpp
