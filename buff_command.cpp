@@ -20,10 +20,9 @@ public:
  
         ChatCommand* GetCommands() const
     {
-        static ChatCommand IngameCommandTable[] =
+        static ChatCommand IngameCommandTable =
         {
-        { "buff",           rbac::RBAC_PERM_COMMAND_BUFF,         true,  &HandleBuffCommand,                "", NULL },
-        { NULL,             0,                  false, NULL,                              "", NULL }
+        { "buff",           SEC_PLAYER,         false,  &HandleBuffCommand,                "" },
         };
                  return IngameCommandTable;
     }
