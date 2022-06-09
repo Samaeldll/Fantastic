@@ -17,7 +17,7 @@ class telenpc : public CreatureScript
           if (Creature* cr = HashMapHolder<Creature>::FindCreature(guid))
              {
                  if (cr->IsAlive())
-                     return "Alive";
+                     return "Жив";
                  else return time_conv_to_str = secsToTimeString(cr->GetRespawnTimeEx()-time(NULL));
              }
 
@@ -31,12 +31,12 @@ class telenpc : public CreatureScript
               uint32 tempTime = respawnTime - time(NULL);
 
               if (tempTime > 86400 || tempTime < 1)
-                  time_conv_to_str = "Alive";
+                  time_conv_to_str = "Жив";
               else
                   time_conv_to_str = secsToTimeString(respawnTime-time(NULL));  
               return time_conv_to_str;
             }
-          else return "Alive";
+          else return "Жив";
     }
 
     bool UpdateRespTime(Player* player)
@@ -96,7 +96,7 @@ class telenpc : public CreatureScript
             player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_reputation_wyrmresttemple:30|tРубиновое святилище", GOSSIP_SENDER_MAIN, 102);
             player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_ladyvashj:30|tЗмеиное святилище", GOSSIP_SENDER_MAIN, 103);
             player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_zuljin:30|tЗул'Аман", GOSSIP_SENDER_MAIN, 104);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/misc_drogbartotem02:30|tИспытание крестоносца", GOSSIP_SENDER_MAIN, 105);
+            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/misc_drogbartotem02:30|tКузня Душ", GOSSIP_SENDER_MAIN, 105);
             player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_dungeon_the stonecore_ozruk:30|tКрепость Бурь", GOSSIP_SENDER_MAIN, 106);
 			player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_gruul:30|tЛогово Груула [Донат]", GOSSIP_SENDER_MAIN, 107);
 		    player->PlayerTalkClass->SendGossipMenu(85000,creature->GetGUID());
@@ -193,7 +193,7 @@ class telenpc : public CreatureScript
 
 		case 105:
 		    player->PlayerTalkClass->SendCloseGossip();
-		    player->TeleportTo(571, 8515.610352f, 714.153015f, 560.347961f, 1.577530f);
+		    player->TeleportTo(571, 5667.403320f, 2008.079834, 799.799011, 5.410361f);
 		    break;
 			
 		case 106:
