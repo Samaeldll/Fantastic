@@ -29,8 +29,8 @@ set(scripts_STAT_SRCS
     Custom/npc_vip.cpp
     Custom/start_vip.cpp
     Custom/vip.cpp
-	Custom/vip_hello.cpp
-	Custom/vip_start.cpp
+    Custom/vip_helo.cpp
+    Custom/vip_start.cpp
     #Transmogrification
     Custom/Transmogrification.h
     Custom/Transmogrification.cpp
