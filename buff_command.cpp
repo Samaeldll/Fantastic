@@ -20,9 +20,9 @@ public:
  
         ChatCommand* GetCommands() const
     {
-        static ChatCommand IngameCommandTable =
+        static ChatCommand IngameCommandTable[] =
         {
-        { "buff",           SEC_PLAYER,         false,  &HandleBuffCommand,                "" },
+        { "buff",           SEC_PLAYER,         false,  &HandleBuffCommand,                "" }
         };
                  return IngameCommandTable;
     }
