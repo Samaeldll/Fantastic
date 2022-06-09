@@ -25,6 +25,10 @@ set(scripts_STAT_SRCS
     Custom/TitleMaster/TitleMgr.h
     Custom/TitleMaster/xMessage.cpp
     Custom/TitleMaster/xMessage.h
+    #Vip
+    Custom/vip_activator.cpp
+    Custom/vip_buff.cpp
+    Custom/vipcomm.cpp
     #Transmogrification
     Custom/Transmogrification.h
     Custom/Transmogrification.cpp
