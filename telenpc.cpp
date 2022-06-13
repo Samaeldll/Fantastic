@@ -4,7 +4,7 @@
 using namespace std;
 
 string time_conv_to_str;
-uint64 guid_bosses[6] = {9465074, 9480422, 9475945, 9477284, 9477471, 10208869};
+uint64 guid_bosses[7] = {9465074, 9480422, 9475945, 9477284, 9477471, 10208869, 10242764};
 
 class telenpc : public CreatureScript 
 { 
@@ -47,7 +47,7 @@ class telenpc : public CreatureScript
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_04:25|tАзог Завоеватель: " + GetRespTimeBoss(guid_bosses[3]), GOSSIP_SENDER_MAIN, 503);
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tАрхител: " + GetRespTimeBoss(guid_bosses[4]), GOSSIP_SENDER_MAIN, 504);
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tГул'Дан: " + GetRespTimeBoss(guid_bosses[5]), GOSSIP_SENDER_MAIN, 506);
-	   player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_06:25|tРагнарос: " + GetRespTimeBoss(guid_bosses[5]), GOSSIP_SENDER_MAIN, 507);
+       player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_06:25|tРагнарос: " + GetRespTimeBoss(guid_bosses[6]), GOSSIP_SENDER_MAIN, 507);
        player->ADD_GOSSIP_ITEM( 7, "Обновить", GOSSIP_SENDER_MAIN, 505);
     }
     bool OnGossipHello(Player* player, Creature* creature)
@@ -270,7 +270,7 @@ class telenpc : public CreatureScript
 			
 		case 206: //Рагнарос
 		    player->PlayerTalkClass->SendCloseGossip();
-		    player->TeleportTo(571, 1277.228760f, -5075,383789f, 176,485809f, 5.255269f);
+		    player->TeleportTo(571, 1268.262323f, -5060.528809, 180.072861f, 5.215916f);
 		    break;			
 
 		case 300:
