@@ -102,6 +102,7 @@ public:
             { "gossip_menu_option",            rbac::RBAC_PERM_COMMAND_RELOAD_GOSSIP_MENU_OPTION, true,  &HandleReloadGossipMenuOptionCommand,           "", NULL },
             { "item_enchantment_template",     rbac::RBAC_PERM_COMMAND_RELOAD_ITEM_ENCHANTMENT_TEMPLATE, true,  &HandleReloadItemEnchantementsCommand,          "", NULL },
             { "item_loot_template",            rbac::RBAC_PERM_COMMAND_RELOAD_ITEM_LOOT_TEMPLATE, true,  &HandleReloadLootTemplatesItemCommand,          "", NULL },
+			{ "item_template",            	   rbac::RBAC_PERM_COMMAND_RELOAD_ITEM_TEMPLATE, true,  &HandleReloadTemplatesItemCommand,          "", NULL },
             { "item_set_names",                rbac::RBAC_PERM_COMMAND_RELOAD_ITEM_SET_NAMES, true,  &HandleReloadItemSetNamesCommand,               "", NULL },
             { "lfg_dungeon_rewards",           rbac::RBAC_PERM_COMMAND_RELOAD_LFG_DUNGEON_REWARDS, true,  &HandleReloadLfgRewardsCommand,                 "", NULL },
             { "locales_achievement_reward",    rbac::RBAC_PERM_COMMAND_RELOAD_LOCALES_ACHIEVEMENT_REWARD, true,  &HandleReloadLocalesAchievementRewardCommand,   "", NULL },
@@ -302,6 +303,7 @@ public:
     {
         HandleReloadPageTextsCommand(handler, "a");
         HandleReloadItemEnchantementsCommand(handler, "a");
+		HandleReloadTemplatesItemCommand(handler, "a");
         return true;
     }
 
@@ -400,7 +402,7 @@ public:
         return true;
     }
 
-    static bool HandleReloadCreatureTemplateCommand(ChatHandler* handler, const char* args)
+    /*static bool HandleReloadCreatureTemplateCommand(ChatHandler* handler, const char* args)
     {
         if (!*args)
             return false;
@@ -519,6 +521,14 @@ public:
         }
 
         handler->SendGlobalGMSysMessage("Creature template reloaded.");
+        return true;
+    }*/
+	
+	    static bool HandleReloadCreatureTemplateCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        TC_LOG_INFO("misc", "Re-Loading Creature Data...");
+        sObjectMgr->LoadCreatureTemplates();
+        handler->SendGlobalGMSysMessage("DB table `creature_template` reloaded.");
         return true;
     }
 
@@ -650,6 +660,16 @@ public:
         sConditionMgr->LoadConditions(true);
         return true;
     }
+	
+	static bool HandleReloadTemplatesItemCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        TC_LOG_INFO("misc", "Re-Loading Items Tables... (`item_template`)");
+		sObjectMgr->LoadItems();
+        handler->SendGlobalGMSysMessage("DB table `item_template` reloaded.");
+        return true;
+    }
+
+	
 
     static bool HandleReloadLootTemplatesMillingCommand(ChatHandler* handler, const char* /*args*/)
     {
