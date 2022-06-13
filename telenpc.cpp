@@ -4,7 +4,7 @@
 using namespace std;
 
 string time_conv_to_str;
-uint64 guid_bosses[7] = {9465074, 9480422, 9475945, 9477284, 9477471, 10208869, 10242764};
+uint64 guid_bosses[7] = {9465074, 9480422, 9475945, 10243036, 9477471, 10208869, 10242764};
 
 class telenpc : public CreatureScript 
 { 
