@@ -4,7 +4,7 @@
 using namespace std;
 
 string time_conv_to_str;
-uint64 guid_bosses[6] = {9465074, 9480422, 9475945, 9477284, 9477471, 10208869};
+uint64 guid_bosses[7] = {9465074, 9480422, 9475945, 10243036, 9477471, 10208869, 10242764};
 
 class telenpc : public CreatureScript 
 { 
@@ -47,7 +47,7 @@ class telenpc : public CreatureScript
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_04:25|tАзог Завоеватель: " + GetRespTimeBoss(guid_bosses[3]), GOSSIP_SENDER_MAIN, 503);
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tАрхител: " + GetRespTimeBoss(guid_bosses[4]), GOSSIP_SENDER_MAIN, 504);
        player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_05:25|tГул'Дан: " + GetRespTimeBoss(guid_bosses[5]), GOSSIP_SENDER_MAIN, 506);
-	   player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_06:25|tРагнарос: " + GetRespTimeBoss(guid_bosses[5]), GOSSIP_SENDER_MAIN, 507);
+       player->ADD_GOSSIP_ITEM( GOSSIP_ICON_BATTLE, "|TInterface/ICONS/Achievement_pvp_a_06:25|tРагнарос: " + GetRespTimeBoss(guid_bosses[6]), GOSSIP_SENDER_MAIN, 507);
        player->ADD_GOSSIP_ITEM( 7, "Обновить", GOSSIP_SENDER_MAIN, 505);
     }
     bool OnGossipHello(Player* player, Creature* creature)
@@ -91,20 +91,21 @@ class telenpc : public CreatureScript
 		switch(action)
 		{	
 		case 1:
-		    player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_classic:30:30:-18:0|tСтандартные Подземелья", GOSSIP_SENDER_MAIN, 9); 
-            player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_burningcrusade:30:30:-18:0|tПодземелья V.I.P", GOSSIP_SENDER_MAIN, 10); 
-            player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_wrathofthelichking:30:30:-18:0|tПодземелья Донат", GOSSIP_SENDER_MAIN, 11); 
-			break;
+		player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_classic:30:30:-18:0|tСтандартные Подземелья", GOSSIP_SENDER_MAIN, 9); 
+            	player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_burningcrusade:30:30:-18:0|tПодземелья V.I.P", GOSSIP_SENDER_MAIN, 10); 
+            	player->ADD_GOSSIP_ITEM( GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/expansionicon_wrathofthelichking:30:30:-18:0|tПодземелья Донат", GOSSIP_SENDER_MAIN, 11); 
+		player->PlayerTalkClass->SendGossipMenu(85000,creature->GetGUID());
+		break;
 		
 		
 		case 9:
-		    player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_chiefukorzsandscalp:30|tЗул'Фаррак", GOSSIP_SENDER_MAIN, 100, "Вы уверены?", 0, false);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_dungeon_ulduar80_normal:30|tЧертоги Молний", GOSSIP_SENDER_MAIN, 101);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_reputation_wyrmresttemple:30|tРубиновое святилище", GOSSIP_SENDER_MAIN, 102);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_ladyvashj:30|tЗмеиное святилище", GOSSIP_SENDER_MAIN, 103);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_zuljin:30|tЗул'Аман", GOSSIP_SENDER_MAIN, 104);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/misc_drogbartotem02:30|tКузня Душ", GOSSIP_SENDER_MAIN, 105);
-            player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_dungeon_the stonecore_ozruk:30|tКрепость Бурь", GOSSIP_SENDER_MAIN, 106);
+		    player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_chiefukorzsandscalp:30|tЗул'Фаррак", GOSSIP_SENDER_MAIN, 100);
+            	player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_dungeon_ulduar80_normal:30|tЧертоги Молний", GOSSIP_SENDER_MAIN, 101);
+           	 player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_reputation_wyrmresttemple:30|tРубиновое святилище", GOSSIP_SENDER_MAIN, 102);
+            	player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_ladyvashj:30|tЗмеиное святилище", GOSSIP_SENDER_MAIN, 103);
+            	player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_boss_zuljin:30|tЗул'Аман", GOSSIP_SENDER_MAIN, 104);
+           	 player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/misc_drogbartotem02:30|tКузня Душ", GOSSIP_SENDER_MAIN, 105);
+           	 player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/achievement_dungeon_the stonecore_ozruk:30|tКрепость Бурь", GOSSIP_SENDER_MAIN, 106);
 		    player->PlayerTalkClass->SendGossipMenu(85000,creature->GetGUID());
 		    break; 
 			
@@ -157,9 +158,9 @@ class telenpc : public CreatureScript
 		    player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/inv_ore_gold_nugget:25|tЗолота Лихордка", GOSSIP_SENDER_MAIN, 500);
 		    player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/monk_stance_whitetiger:25|tЭфириальный Сброс", GOSSIP_SENDER_MAIN, 501);
 			player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/inv_jewelcrafting_70_gem03_blue:25|tКристальная Эфория", GOSSIP_SENDER_MAIN, 502);
-			player->ADD_GOSSIP_ITEM( 2, "|TInterface/ICONS/inv_fishingchair:30:30:-18:0|tРыбалка", GOSSIP_SENDER_MAIN, 4); 
+			player->ADD_GOSSIP_ITEM( 2, "|TInterface/icons/inv_fishingchair:25|tРыбалка", GOSSIP_SENDER_MAIN, 4); 
 		    player->PlayerTalkClass->SendGossipMenu(85000,creature->GetGUID());
-		    break; 
+		    break;   
 
 		case 7:
             UpdateRespTime(player);
@@ -270,7 +271,7 @@ class telenpc : public CreatureScript
 			
 		case 206: //Рагнарос
 		    player->PlayerTalkClass->SendCloseGossip();
-		    player->TeleportTo(571, 1277.228760f, -5075,383789f, 176,485809f, 5.255269f);
+		    player->TeleportTo(571, 1268.262323f, -5060.528809, 180.072861f, 5.215916f);
 		    break;			
 
 		case 300:
