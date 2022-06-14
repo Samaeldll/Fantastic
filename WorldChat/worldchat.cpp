@@ -139,7 +139,7 @@ public:
     {
         static ChatCommand WorldChatCommandTable[] =
         {
-            {"chat", SEC_PLAYER, true, &HandleWorldChatCommand, "", NULL },
+            {"chat", rbac::RBAC_PERM_COMMAND_CUSTOM_CHAT, true, &HandleWorldChatCommand, "", NULL },
             { NULL, 0									,false, NULL				   , "", NULL }
         };
 
@@ -148,12 +148,12 @@ public:
 
     static bool HandleWorldChatCommand(ChatHandler * handler, const char * args)
     {
-        /*if (sWorld->getIntConfig(CONFIG_WORLD_CHAT_ENABLED) == 0)
+        if (sWorld->getIntConfig(CONFIG_WORLD_CHAT_ENABLED) == 0)
         {
             handler->PSendSysMessage("Мировой чат отключен");
             handler->SetSentErrorMessage(true);
             return false;
-        } отключено */
+        }
 
         if (!handler->GetSession()->GetPlayer()->CanSpeak())
             return false;

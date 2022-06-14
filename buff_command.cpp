@@ -22,7 +22,8 @@ public:
     {
         static ChatCommand IngameCommandTable[] =
         {
-        { "buff",           SEC_PLAYER,         false,  &HandleBuffCommand,                "" }
+        { "buff",           rbac::RBAC_PERM_COMMAND_BUFF,         true,  &HandleBuffCommand,                "", NULL },
+        { NULL,             0,                  false, NULL,                              "", NULL }
         };
                  return IngameCommandTable;
     }
